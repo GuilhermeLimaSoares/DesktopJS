@@ -1,0 +1,27 @@
+{
+  "name": "desktop-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.7.0",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.11"
+  },
+  "build": {
+    "appId": "com.schoolofnet.son-electron-anotacoes",
+    "mac": {
+      "target": "",
+      "icon": ""
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "description": ""
+}

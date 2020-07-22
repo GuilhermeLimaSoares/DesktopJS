@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anotacoes</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" class="d-flex flex-column">
+      <div id="wrapper" class="container">
+        <div class="col">
+          <span class="title centralize">Anotacao</span>
+          <nav class="navigation">
+            <ul class="menu">
+              <li class="menu__item centralize">
+                <a class="btn-annotation" @click.prevent="create()">
+                  Nova anotação
+                </a>
+              </li>
+              <li class="menu__item centralize" v-for="note, index in notes">
+                <!-- <a href="" @click.prevent="active = index"> -->
+                <a href="" @click.prevent="select(index)">
+                  {{ note.content }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col">
+          <span class="title centralize">Anotação</span>
+          <div class="container-text">
+            <textarea
+              @keyup="save()"
+              ref="textarea"
+              class="text-area"
+              placeholder="Insira sua anotação..."
+            >
+              {{  (active !== null) ? notes[active].content : ''}}
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/lodash/lodash.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
